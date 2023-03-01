@@ -1,0 +1,21 @@
+.artist-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.artist-container {
+  height: 95%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-evenly;
+  align-items: center;
+  place-items: center;
+  margin-left: 65px;
+  background-color: gray;
+  border-radius: 12px;
+  -webkit-box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+  box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+}
