@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ArtistDetails.css";
-import { retrieveSingleArtist } from "../apiCalls";
+import { retrieveSingleArtist, addArtistToFavorites } from "../apiCalls";
 import { NavLink, Link } from "react-router-dom";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
@@ -24,6 +24,9 @@ const ArtistDetails = (props) => {
     getArtist();
   });
 
+  const handleAdd = () => {
+    addArtistToFavorites(artist);
+  };
   const { name, genre, video, description } = artist;
   // const errorModal = error ? <ErrorModal message={error} /> : null;
   return (
@@ -31,7 +34,7 @@ const ArtistDetails = (props) => {
       <section className="artist-container">
         <div className="to-faves">
           <NavLink to="/favorites">
-            <button className="favorites-button">Add To Favorites</button>
+            <button className="favorites-button">To Favorites</button>
           </NavLink>
         </div>
         <h1 className="artist-name">{name}</h1>
