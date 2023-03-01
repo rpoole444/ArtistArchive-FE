@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./ArtistDetails.css";
-import { retrieveSingleArtist, addArtistToFavorites } from "../apiCalls";
+import {
+  retrieveSingleArtist,
+  addArtistToFavorites,
+  getAllFavorites,
+  deleteFromFavorites,
+  updateFavStatus,
+} from "../apiCalls";
 import { NavLink, Link } from "react-router-dom";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
