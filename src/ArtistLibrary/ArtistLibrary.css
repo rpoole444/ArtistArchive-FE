@@ -4,20 +4,10 @@
 }
 
 .artist-container {
-  /* height: 90%;
-  width: 90%;
-  background-color: blue;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  -webkit-box-shadow: 16px 15px 32px -6px rgba(0, 0, 0, 0.67);
-  -moz-box-shadow: 16px 15px 32px -6px rgba(0, 0, 0, 0.67);
-  box-shadow: 16px 15px 32px -6px rgba(0, 0, 0, 0.67);
-  overflow-y: scroll; */
   display: grid;
   grid-template-columns: repeat(5, minmax(150px, 30%));
   grid-auto-rows: minmax(200px, 320px);
-  grid-row-gap: 12%;
+  grid-row-gap: 6%;
   grid-column-gap: 4.9%;
   justify-content: center;
   overflow-y: scroll;
@@ -26,4 +16,67 @@
   padding-bottom: 2.6%;
   background-color: gray;
   border-radius: 12px;
+  -webkit-box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+  box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+}
+
+.artist-container::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .artist-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 80%));
+    grid-auto-rows: minmax(155px, 320px);
+    grid-row-gap: 6%;
+    grid-column-gap: 4.9%;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 75%;
+    width: 97%;
+    padding-bottom: 2.6%;
+    background-color: gray;
+    border-radius: 12px;
+    -webkit-box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+    box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 743px) {
+  .artist-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 84%));
+    grid-auto-rows: minmax(155px, 320px);
+    grid-row-gap: 6%;
+    grid-column-gap: 4.9%;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 75%;
+    width: 97%;
+    padding-bottom: 2.6%;
+    background-color: gray;
+    border-radius: 12px;
+    -webkit-box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+    box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+  }
+}
+
+@media screen and (min-width: 743px) and (max-width: 1023px) {
+  .artist-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 47%));
+    grid-auto-rows: minmax(200px, 320px);
+    grid-row-gap: 6%;
+    grid-column-gap: 4.9%;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 75%;
+    width: 97%;
+    padding-bottom: 2.6%;
+    background-color: gray;
+    border-radius: 12px;
+    -webkit-box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+    box-shadow: 1px 7px 18px 13px rgba(0, 0, 0, 0.39);
+  }
 }

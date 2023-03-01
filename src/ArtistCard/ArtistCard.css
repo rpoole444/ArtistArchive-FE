@@ -7,8 +7,10 @@
   width: 14vw;
   border: 2px solid red;
   margin: 1vh;
+  -webkit-box-shadow: 8px 6px 17px 11px rgba(0, 0, 0, 0.39);
+  box-shadow: 8px 6px 17px 11px rgba(0, 0, 0, 0.39);
 }
 
 .card-image {
-  height: 9vh;
+  height: 12vh;
 }
