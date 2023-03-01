@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-items: center;
+  font-family: "OpenDyslexic Regular";
 }
 
 @media (prefers-reduced-motion: no-preference) {
