@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Library from "../ArtistLibrary/ArtistLibrary";
 import { retrieveAllArtists } from "../apiCalls";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
