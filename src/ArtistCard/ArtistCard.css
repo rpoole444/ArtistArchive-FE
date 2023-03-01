@@ -1,0 +1,9 @@
+.card-container {
+  height: 20vh;
+  width: 14vw;
+  border: 2px solid red;
+}
+
+.card-image {
+  height: 9vh;
+}
