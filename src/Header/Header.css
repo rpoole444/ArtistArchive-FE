@@ -1,0 +1,20 @@
+.header {
+  height: 34%;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search {
+  height: 2vh;
+  width: 15vw;
+}
+
+.app-title {
+  font-size: 5vh;
+}
+
+.record-icon {
+  height: 13vh;
+}
