@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Header from "../Header/Header";
+import Library from "../ArtistLibrary/ArtistLibrary";
+import { retrieveAllArtists } from "../apiCalls";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [artists, setArtists] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const getArtists = () => {
+    setLoading(true);
+    retrieveAllArtists().then((data) => {
+      setArtists(data.artists);
+      setLoading(false);
+    });
+  };
+
+  useEffect(() => {
+    getArtists();
+  }, []);
+  console.log(artists);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <Header />
+      <Library allArtists={artists} />
+    </main>
   );
-}
+};
 
 export default App;
