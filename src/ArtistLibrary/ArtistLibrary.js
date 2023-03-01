@@ -14,6 +14,7 @@ const ArtistLibrary = ({ allArtists }) => {
             image={artist.image}
             name={artist.name}
             rank={artist.rank}
+            genre={artist.genre}
           />
         );
       })
