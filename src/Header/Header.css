@@ -1,7 +1,6 @@
 .header {
-  height: 34%;
+  height: 14%;
   width: 100%;
-  border-bottom: 2px solid black;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -17,5 +16,5 @@
 }
 
 .record-icon {
-  height: 13vh;
+  height: 15vh;
 }

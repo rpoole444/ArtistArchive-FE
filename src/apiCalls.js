@@ -3,9 +3,20 @@ const retrieveAllArtists = () => {
     if (response.ok) {
       return response.json();
     } else {
-      return new Error("No Such Path");
+      throw new Error("No Such Path");
     }
   });
 };
 
-export { retrieveAllArtists };
+const retrieveSingleArtist = (props) => {
+  return fetch(`http://localhost:3001/api/v1/artists/${props.artistID}`).then(
+    (response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error("No Such path");
+    }
+  );
+};
+
+export { retrieveAllArtists, retrieveSingleArtist };
