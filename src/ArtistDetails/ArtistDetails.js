@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ArtistDetails.css";
 import { retrieveSingleArtist } from "../apiCalls";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
 const ArtistDetails = (props) => {
@@ -44,11 +44,14 @@ const ArtistDetails = (props) => {
           <p>{`Genre: ${genre}`}</p>
           <article className="bio">{description}</article>
         </section>
-        <NavLink to="/">
-          <section className="button-container">
-            <button className="button">Back Home</button>
-          </section>
-        </NavLink>
+        <section className="buttons-container">
+          <NavLink to="/">
+            <button className="home-button">Back Home</button>
+          </NavLink>
+          <NavLink to="/favorites">
+            <button className="favorites-button">To Favorites</button>
+          </NavLink>
+        </section>
       </section>
     </section>
   );

@@ -61,3 +61,15 @@ article {
 article::-webkit-scrollbar {
   display: none;
 }
+.favorites-button,
+.home-button {
+  height: 6vh;
+  width: 12vw;
+  border-radius: 20px;
+}
+.buttons-container {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1vh;
+}
