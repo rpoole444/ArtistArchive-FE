@@ -61,6 +61,13 @@ article {
 article::-webkit-scrollbar {
   display: none;
 }
+
+.to-faves {
+  padding-top: 1.5vh;
+  width: 70vw;
+  display: flex;
+  justify-content: flex-end;
+}
 .favorites-button,
 .home-button {
   height: 6vh;

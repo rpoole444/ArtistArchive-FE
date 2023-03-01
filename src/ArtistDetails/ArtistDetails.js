@@ -8,6 +8,7 @@ const ArtistDetails = (props) => {
   const [artist, setArtist] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [favorited, setFavorited] = useState(false);
 
   const getArtist = () => {
     setLoading(true);
@@ -18,14 +19,21 @@ const ArtistDetails = (props) => {
       })
       .catch((error) => setError({ error: error.message }));
   };
+
   useEffect(() => {
     getArtist();
   });
+
   const { name, genre, video, description } = artist;
   // const errorModal = error ? <ErrorModal message={error} /> : null;
   return (
     <section className="artist-details">
       <section className="artist-container">
+        <div className="to-faves">
+          <NavLink to="/favorites">
+            <button className="favorites-button">Add To Favorites</button>
+          </NavLink>
+        </div>
         <h1 className="artist-name">{name}</h1>
         <section className="artist-video">
           {video ? (
@@ -48,9 +56,7 @@ const ArtistDetails = (props) => {
           <NavLink to="/">
             <button className="home-button">Back Home</button>
           </NavLink>
-          <NavLink to="/favorites">
-            <button className="favorites-button">To Favorites</button>
-          </NavLink>
+          <button className="favorites-button">Add To Favorites</button>
         </section>
       </section>
     </section>
