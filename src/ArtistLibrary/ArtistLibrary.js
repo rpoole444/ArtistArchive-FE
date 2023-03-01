@@ -3,6 +3,7 @@ import "./ArtistLibrary.css";
 import ArtistCard from "../ArtistCard/ArtistCard";
 
 const ArtistLibrary = ({ allArtists }) => {
+  console.log(allArtists);
   const mappedArtists =
     allArtists.length > 0 ? (
       allArtists.map((artist) => {
