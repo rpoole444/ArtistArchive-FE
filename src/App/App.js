@@ -37,7 +37,7 @@ const App = () => {
                 <h3 className="loading-text">Loading...</h3>
               </div>
             ) : (
-              <div>
+              <div className="main-page">
                 <Header />
                 <Library allArtists={artists} />
               </div>
@@ -53,7 +53,7 @@ const App = () => {
                 <h3 className="loading-text">Loading...</h3>
               </div>
             ) : (
-              <div>
+              <div className="single-artist">
                 <ArtistDetails
                   artistID={match.params.id}
                   key={match.params.id}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ArtistCard.css";
 
 const ArtistCard = ({ id, image, name, genre, rank }) => {
@@ -10,6 +11,9 @@ const ArtistCard = ({ id, image, name, genre, rank }) => {
         <p className="card-genre">{`Genre: ${genre}`}</p>
         <p className="card-rank">{`Rank: ${rank}`}</p>
       </div>
+      <Link key={id} to={`/${id}`} className="learn-more-button">
+        Learn More
+      </Link>
     </section>
   );
 };
