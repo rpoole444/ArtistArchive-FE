@@ -70,10 +70,34 @@ article::-webkit-scrollbar {
 }
 .favorites-button,
 .home-button {
-  height: 6vh;
-  width: 12vw;
-  border-radius: 20px;
+  width: 15vw;
+  height: 10vh;
+  background: none;
+  border-radius: 50px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
 }
+.unfavorite-button {
+  width: 15vw;
+  height: 10vh;
+  background: brown;
+  border-radius: 50px;
+  border: none;
+  color: #fbf3ee;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
 .buttons-container {
   width: 70vw;
   display: flex;
