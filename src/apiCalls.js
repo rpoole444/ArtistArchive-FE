@@ -9,6 +9,7 @@ const retrieveAllArtists = () => {
 };
 
 const retrieveSingleArtist = (props) => {
+  // console.log("PROPPIES: ", props);
   return fetch(`http://localhost:3001/api/v1/artists/${props.artistID}`).then(
     (response) => {
       if (response.ok) {
@@ -29,6 +30,7 @@ const getAllFavorites = () => {
 };
 
 const addArtistToFavorites = (favoriteArtist) => {
+  console.log("ADD TO FAVES");
   return fetch(`http://localhost:3001/api/v1/favorites`, {
     method: "POST",
     body: JSON.stringify(favoriteArtist),
@@ -44,7 +46,9 @@ const addArtistToFavorites = (favoriteArtist) => {
 };
 
 const updateFavStatus = (selectedArtist) => {
-  return fetch(`http://localhost:3001/api/v1/favorites/${selectedArtist.id}`, {
+  console.log("Artist:", selectedArtist);
+  console.log("singleArtistBefore:", selectedArtist.isFavorited);
+  return fetch(`http://localhost:3001/api/v1/artists/${selectedArtist.id}`, {
     method: "PATCH",
     body: JSON.stringify({
       isFavorited: !(selectedArtist.isFavorited === "true"),
@@ -54,6 +58,7 @@ const updateFavStatus = (selectedArtist) => {
     },
   }).then((response) => {
     if (response.ok) {
+      console.log("singleArtistafter:", response);
       return response.json();
     }
     throw new Error("No Such path");
