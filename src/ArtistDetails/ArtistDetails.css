@@ -61,3 +61,46 @@ article {
 article::-webkit-scrollbar {
   display: none;
 }
+
+.to-faves {
+  padding-top: 1.5vh;
+  width: 70vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.favorites-button,
+.home-button {
+  width: 15vw;
+  height: 10vh;
+  background: none;
+  border-radius: 50px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.unfavorite-button {
+  width: 15vw;
+  height: 10vh;
+  background: brown;
+  border-radius: 50px;
+  border: none;
+  color: #fbf3ee;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.buttons-container {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1vh;
+}

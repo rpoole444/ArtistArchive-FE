@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
+import Favorites from "../Favorites/Favorites";
 import Library from "../ArtistLibrary/ArtistLibrary";
 import ArtistDetails from "../ArtistDetails/ArtistDetails";
 import ErrorPage from "../ErrorHandling/ErrorPage";
@@ -44,6 +45,16 @@ const App = () => {
             );
           }}
         ></Route>
+        <Route
+          exact
+          path="/favorites"
+          render={({ match }) => {
+            return [
+              <Header location="favorites" key={match + "-header"} />,
+              <Favorites key={match + "-artist-details"} />,
+            ];
+          }}
+        />
         <Route
           exact
           path="/:id"

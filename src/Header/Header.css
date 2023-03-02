@@ -18,3 +18,11 @@
 .record-icon {
   height: 15vh;
 }
+
+.landing-page-link,
+.favorites-link {
+  font-family: "Yeseva One";
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+}

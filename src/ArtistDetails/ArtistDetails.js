@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./ArtistDetails.css";
-import { retrieveSingleArtist } from "../apiCalls";
-import { NavLink } from "react-router-dom";
+import {
+  retrieveSingleArtist,
+  addArtistToFavorites,
+  getAllFavorites,
+  deleteFromFavorites,
+  updateFavStatus,
+} from "../apiCalls";
+import { trimArtistData, cleanArtistData } from "../utilities";
+import { NavLink, Link } from "react-router-dom";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
 const ArtistDetails = (props) => {
   const [artist, setArtist] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [favorited, setFavorited] = useState(false);
 
   const getArtist = () => {
     setLoading(true);
@@ -18,14 +26,51 @@ const ArtistDetails = (props) => {
       })
       .catch((error) => setError({ error: error.message }));
   };
+
   useEffect(() => {
     getArtist();
   });
+
+  const handleAdd = () => {
+    console.log("PROPS", props);
+    Promise.all([
+      addArtistToFavorites(trimArtistData(artist)),
+      updateFavStatus(artist),
+    ])
+      .then(() => {
+        return retrieveSingleArtist(props).then((data) => {
+          const cleanedArtistData = cleanArtistData(data);
+          console.log("HANDLE-ADD: ", cleanedArtistData);
+          setArtist(cleanedArtistData);
+        });
+      })
+      .catch((error) => setError({ error: error.message }));
+  };
+
+  const determineButton = () => {
+    if (artist.isFavorited === "true") {
+      return (
+        <button className="unfavorite-button">Remove from Favorites</button>
+      );
+    } else {
+      return (
+        <button className="favorites-button" onClick={handleAdd}>
+          Add to Favorites
+        </button>
+      );
+    }
+  };
+
   const { name, genre, video, description } = artist;
   // const errorModal = error ? <ErrorModal message={error} /> : null;
   return (
     <section className="artist-details">
       <section className="artist-container">
+        <div className="to-faves">
+          <NavLink exact to="/favorites">
+            <button className="favorites-button">To Favorites</button>
+          </NavLink>
+        </div>
         <h1 className="artist-name">{name}</h1>
         <section className="artist-video">
           {video ? (
@@ -44,11 +89,12 @@ const ArtistDetails = (props) => {
           <p>{`Genre: ${genre}`}</p>
           <article className="bio">{description}</article>
         </section>
-        <NavLink to="/">
-          <section className="button-container">
-            <button className="button">Back Home</button>
-          </section>
-        </NavLink>
+        <section className="buttons-container">
+          <NavLink to="/">
+            <button className="home-button">Back Home</button>
+          </NavLink>
+          {determineButton()}
+        </section>
       </section>
     </section>
   );

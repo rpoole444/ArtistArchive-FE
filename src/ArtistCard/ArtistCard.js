@@ -12,7 +12,7 @@ const ArtistCard = ({ id, image, name, genre, rank }) => {
         <p className="card-rank">{`Rank: ${rank}`}</p>
       </div>
       <Link key={id} to={`/${id}`} className="learn-more-button">
-        Learn More
+        <button className="learn-more">Learn More</button>
       </Link>
     </section>
   );
