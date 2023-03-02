@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 38vh;
+  height: 45vh;
   width: 15vw;
   border: 2px solid red;
   margin: 1vh;
@@ -24,4 +24,19 @@
 
 .artist-name-tag {
   font-size: large;
+}
+
+.learn-more {
+  width: 10vw;
+  height: 8vh;
+  background: none;
+  border-radius: 50px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
 }

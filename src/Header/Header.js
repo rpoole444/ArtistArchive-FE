@@ -29,6 +29,7 @@ const Header = ({ location }) => {
         type="text"
         placeholder=" Search"
       ></input>
+      {navLink}
     </nav>
   );
 };
