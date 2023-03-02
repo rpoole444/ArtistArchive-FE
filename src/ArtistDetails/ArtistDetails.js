@@ -15,7 +15,7 @@ const ArtistDetails = (props) => {
   const [artist, setArtist] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [favorited, setFavorited] = useState(false);
+  // const [favorited, setFavorited] = useState(false);
 
   const getArtist = () => {
     setLoading(true);
@@ -29,25 +29,38 @@ const ArtistDetails = (props) => {
 
   useEffect(() => {
     getArtist();
-  });
+  }, []); //watch something from here look up useEffect and []
 
   const handleAdd = () => {
-    console.log("PROPS", props);
-    Promise.all([
-      addArtistToFavorites(trimArtistData(artist)),
-      updateFavStatus(artist),
-    ])
-      .then(() => {
-        setArtist({ isFavorited: true });
-        console.log({ artist });
-        return retrieveSingleArtist(props).then((data) => {
-          const cleanedArtistData = cleanArtistData(data[0]);
-          console.log("HANDLE-ADD: ", cleanedArtistData);
-          setArtist(cleanedArtistData);
-        });
-      })
-      .catch((error) => setError({ error: error.message }));
+    setArtist((prevArtist) => {
+      prevArtist.isFavorited = !prevArtist.isFavorited;
+      Promise.all([
+        addArtistToFavorites(prevArtist),
+        updateFavStatus(prevArtist),
+      ]);
+      // .then((data) => {
+      //   setArtist(data);
+      // });
+
+      return { ...prevArtist };
+    });
+
+    console.log("state:", artist);
+
+    // setArtist({ isFavorited: true });
+    // Promise.all([addArtistToFavorites(artist), updateFavStatus(artist)])
+    //   .then(() => {
+
+    //     return retrieveSingleArtist(props).then((data) => {
+    //       const cleanedArtistData = cleanArtistData(data[0]);
+
+    //       setArtist(cleanedArtistData);
+    //     });
+    //   })
+    //   .catch((error) => setError({ error: error.message }));
   };
+
+  console.log("state, Outside:", artist);
 
   const handleDelete = () => {
     console.log(artist.id);
@@ -63,7 +76,8 @@ const ArtistDetails = (props) => {
 
   const determineButton = () => {
     console.log("FIRE BUTTON");
-    if (artist.isFavorited === "true") {
+
+    if (artist.isFavorited === true) {
       console.log(artist);
       return (
         <button className="unfavorite-button" onClick={handleDelete}>
@@ -112,7 +126,15 @@ const ArtistDetails = (props) => {
             <button className="home-button">Back Home</button>
           </NavLink>
         </section>
-        {determineButton()}
+        {artist.isFavorited ? (
+          <button className="unfavorite-button" onClick={handleDelete}>
+            Remove from Favorites
+          </button>
+        ) : (
+          <button className="favorites-button" onClick={handleAdd}>
+            Add to Favorites
+          </button>
+        )}
       </section>
     </section>
   );

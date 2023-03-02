@@ -47,18 +47,19 @@ const addArtistToFavorites = (favoriteArtist) => {
 
 const updateFavStatus = (selectedArtist) => {
   // console.log("Artist:", selectedArtist);
-  console.log("singleArtistBefore:", selectedArtist.isFavorited);
+  // console.log("singleArtistBefore:", selectedArtist.isFavorited);
   return fetch(`http://localhost:3001/api/v1/artists/${selectedArtist.id}`, {
     method: "PATCH",
     body: JSON.stringify({
-      isFavorited: !(selectedArtist.isFavorited === "true"),
+      ...selectedArtist,
+      isFavorited: selectedArtist.isFavorited,
     }),
     headers: {
       "Content-Type": "application/json",
     },
   }).then((response) => {
     if (response.ok) {
-      // console.log("singleArtistafter:", response);
+      // console.log("singleArtistafter:", selectedArtist.isFavorited);
       return response.json();
     }
     throw new Error("No Such path");
