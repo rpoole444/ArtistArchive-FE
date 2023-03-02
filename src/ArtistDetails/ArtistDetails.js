@@ -38,8 +38,10 @@ const ArtistDetails = (props) => {
       updateFavStatus(artist),
     ])
       .then(() => {
+        setArtist({ isFavorited: true });
+        console.log({ artist });
         return retrieveSingleArtist(props).then((data) => {
-          const cleanedArtistData = cleanArtistData(data);
+          const cleanedArtistData = cleanArtistData(data[0]);
           console.log("HANDLE-ADD: ", cleanedArtistData);
           setArtist(cleanedArtistData);
         });
@@ -47,10 +49,26 @@ const ArtistDetails = (props) => {
       .catch((error) => setError({ error: error.message }));
   };
 
+  const handleDelete = () => {
+    console.log(artist.id);
+    Promise.all([deleteFromFavorites(artist.id), updateFavStatus(artist)])
+      .then(() => {
+        return retrieveSingleArtist(props).then((data) => {
+          const cleanedArtistData = cleanArtistData(data[0]);
+          setArtist({ selectedBook: cleanedArtistData });
+        });
+      })
+      .catch((error) => setError({ error: error.message }));
+  };
+
   const determineButton = () => {
+    console.log("FIRE BUTTON");
     if (artist.isFavorited === "true") {
+      console.log(artist);
       return (
-        <button className="unfavorite-button">Remove from Favorites</button>
+        <button className="unfavorite-button" onClick={handleDelete}>
+          Remove from Favorites
+        </button>
       );
     } else {
       return (
@@ -93,8 +111,8 @@ const ArtistDetails = (props) => {
           <NavLink to="/">
             <button className="home-button">Back Home</button>
           </NavLink>
-          {determineButton()}
         </section>
+        {determineButton()}
       </section>
     </section>
   );
