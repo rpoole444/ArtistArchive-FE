@@ -58,7 +58,7 @@ const updateFavStatus = (selectedArtist) => {
     },
   }).then((response) => {
     if (response.ok) {
-      console.log("singleArtistafter:", response);
+      console.log("singleArtistafter:", selectedArtist.isFavorited);
       return response.json();
     }
     throw new Error("No Such path");
