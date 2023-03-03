@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/turntable.png";
 import "./Header.css";
 
-const Header = ({ location }) => {
+const Header = (location, props) => {
+  console.log("header:", props);
+
   let navLink;
   if (location === "favorites") {
     navLink = (
@@ -17,10 +20,14 @@ const Header = ({ location }) => {
       </Link>
     );
   }
+  const { onUpdateSearch } = props;
+  const onSearch = (e) => {
+    onUpdateSearch(e.currentTarget.value);
+  };
   return (
     <nav className="header">
       <Link to="/">
-        <img className="record-icon" src="turntable.png" alt="turntable" />
+        <img className="record-icon" src={logo} alt="turntable" />
       </Link>
       <h1 className="app-title">Artist Archive</h1>
       <input
@@ -28,6 +35,7 @@ const Header = ({ location }) => {
         name="search"
         type="text"
         placeholder=" Search"
+        onChange={onSearch}
       ></input>
       {navLink}
     </nav>
