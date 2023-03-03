@@ -50,7 +50,11 @@ const ArtistDetails = (props) => {
 
   const { name, genre, video, description } = artist;
   // const errorModal = error ? <ErrorModal message={error} /> : null;
-  return (
+  return loading ? (
+    <div className="loading-page">
+      <h3 className="loading-text">Loading...</h3>
+    </div>
+  ) : (
     <section className="artist-details">
       <section className="artist-container">
         <div className="to-faves">
