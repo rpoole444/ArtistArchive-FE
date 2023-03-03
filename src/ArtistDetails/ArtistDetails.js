@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./ArtistDetails.css";
-import {
-  retrieveSingleArtist,
-  addArtistToFavorites,
-  getAllFavorites,
-  deleteFromFavorites,
-  updateFavStatus,
-} from "../apiCalls";
-import { trimArtistData, cleanArtistData } from "../utilities";
-import { NavLink, Link } from "react-router-dom";
+import { retrieveSingleArtist } from "../apiCalls";
+import { NavLink } from "react-router-dom";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
 const ArtistDetails = (props) => {
@@ -44,20 +37,6 @@ const ArtistDetails = (props) => {
     });
     setFavorited(true);
   };
-
-  // setArtist({ isFavorited: true });
-  // Promise.all([addArtistToFavorites(artist), updateFavStatus(artist)])
-  //   .then(() => {
-
-  //     return retrieveSingleArtist(props).then((data) => {
-  //       const cleanedArtistData = cleanArtistData(data[0]);
-
-  //       setArtist(cleanedArtistData);
-  //     });
-  //   })
-  //   .catch((error) => setError({ error: error.message }));
-
-  console.log("state, Outside:", artist);
 
   const handleDelete = () => {
     setFavorited(false);
