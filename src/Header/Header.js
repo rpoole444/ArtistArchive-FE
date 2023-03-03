@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import logo from "../assets/turntable.png";
 import "./Header.css";
 
-const Header = (location, props) => {
-  console.log("header:", props);
+const Header = (props) => {
+  const { location, updateArtistFilter, setSearch } = props;
 
   let navLink;
   if (location === "favorites") {
@@ -20,9 +20,9 @@ const Header = (location, props) => {
       </Link>
     );
   }
-  const { onUpdateSearch } = props;
+
   const onSearch = (e) => {
-    onUpdateSearch(e.currentTarget.value);
+    updateArtistFilter(e);
   };
   return (
     <nav className="header">
@@ -32,10 +32,8 @@ const Header = (location, props) => {
       <h1 className="app-title">Artist Archive</h1>
       <input
         className="search"
-        name="search"
-        type="text"
         placeholder=" Search"
-        onChange={onSearch}
+        onChange={(e) => onSearch(e.target.value)}
       ></input>
       {navLink}
     </nav>

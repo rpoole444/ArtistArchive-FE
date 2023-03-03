@@ -12,7 +12,10 @@ import "./App.css";
 const App = () => {
   const [artists, setArtists] = useState([]);
   const [filteredArtists, setFiltered] = useState([]);
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const [favorites, setFavorites] = useState([]);
 
   const getArtists = () => {
     setLoading(true);
@@ -27,21 +30,25 @@ const App = () => {
     getArtists();
   }, []);
 
-  const updateArtistFilter = useCallback(
-    (q) => {
-      console.log(filteredArtists);
-      if (q.length > 0) {
-        setFiltered({
-          filteredArtists: artists.filter((artist) =>
-            artist.title.toUpperCase().includes(q.toUpperCase())
-          ),
-        });
-      } else {
-        setFiltered(artists);
-      }
-    },
-    [setFiltered]
-  );
+  function updateArtistFilter(q) {
+    setSearch(q);
+    console.log(q);
+    // console.log(filteredArtists);
+    const filteredData = filteredArtists.filter((item) => {
+      return item.toUpperCase().includes(search.toUpperCase());
+    });
+    console.log(filteredData);
+    // if (q.length > 0) {
+    //   setFiltered({
+    //     filteredArtists: artists.filter((artist) => {
+    //       console.log(artist.name);
+    //       artist.name.toUpperCase().includes(q.toUpperCase());
+    //     }),
+    //   });
+    // } else {
+    //   setFiltered(artists);
+    // }
+  }
 
   const updateLibrary = () => {
     setFiltered(artists);
@@ -61,7 +68,10 @@ const App = () => {
               </div>
             ) : (
               <div className="main-page">
-                <Header updateArtistFilter={updateArtistFilter} />
+                <Header
+                  updateArtistFilter={updateArtistFilter}
+                  setSearch={setSearch}
+                />
                 <Library allArtists={filteredArtists} />
               </div>
             );
@@ -73,7 +83,10 @@ const App = () => {
           render={({ match }) => {
             return [
               <Header location="favorites" key={match + "-header"} />,
-              <Favorites key={match + "-artist-details"} />,
+              <Favorites
+                favorites={favorites}
+                key={match + "-artist-details"}
+              />,
             ];
           }}
         />
@@ -88,6 +101,8 @@ const App = () => {
             ) : (
               <div className="single-artist">
                 <ArtistDetails
+                  favorites={favorites}
+                  setFavorites={setFavorites}
                   updateLibrary={updateLibrary}
                   artistID={match.params.id}
                   key={match.params.id}
