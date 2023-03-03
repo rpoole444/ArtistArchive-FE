@@ -22,7 +22,7 @@ const ArtistDetails = (props) => {
 
   useEffect(() => {
     getArtist();
-  }, []); //watch something from here look up useEffect and []
+  }, []);
 
   useEffect(() => {
     for (let el of props.favorites) {
@@ -30,7 +30,7 @@ const ArtistDetails = (props) => {
         setFavorited(true);
       }
     }
-  });
+  }, [props.favorites, artist.id]);
   const handleAdd = () => {
     props.setFavorites((favorites) => {
       return [...favorites, artist];

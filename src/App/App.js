@@ -13,7 +13,6 @@ const App = () => {
   const [artists, setArtists] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [search, setSearch] = useState("");
 
   const getArtists = () => {
     setLoading(true);
