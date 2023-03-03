@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Favorites from "../Favorites/Favorites";
 import Library from "../ArtistLibrary/ArtistLibrary";
@@ -12,16 +12,15 @@ import "./App.css";
 const App = () => {
   const [artists, setArtists] = useState([]);
   const [filteredArtists, setFiltered] = useState([]);
-  const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(false);
-
   const [favorites, setFavorites] = useState([]);
+  const [loading, setLoading] = useState(false);
+  // const [search, setSearch] = useState("");
 
   const getArtists = () => {
     setLoading(true);
     retrieveAllArtists().then((data) => {
       setArtists(data.artists);
-      setFiltered(data.artists);
+      setFiltered(data.artists); //for searchbar
       setLoading(false);
     });
   };
@@ -30,25 +29,25 @@ const App = () => {
     getArtists();
   }, []);
 
-  function updateArtistFilter(q) {
-    setSearch(q);
-    console.log(q);
-    // console.log(filteredArtists);
-    const filteredData = filteredArtists.filter((item) => {
-      return item.toUpperCase().includes(search.toUpperCase());
-    });
-    console.log(filteredData);
-    // if (q.length > 0) {
-    //   setFiltered({
-    //     filteredArtists: artists.filter((artist) => {
-    //       console.log(artist.name);
-    //       artist.name.toUpperCase().includes(q.toUpperCase());
-    //     }),
-    //   });
-    // } else {
-    //   setFiltered(artists);
-    // }
-  }
+  // function updateArtistFilter(q) {  //search bar
+  //   setSearch(q);
+  //   console.log(q);
+  //   // console.log(filteredArtists);
+  //   const filteredData = filteredArtists.filter((item) => {
+  //     return item.toUpperCase().includes(search.toUpperCase());
+  //   });
+  //   console.log(filteredData);
+  //   // if (q.length > 0) {
+  //   //   setFiltered({
+  //   //     filteredArtists: artists.filter((artist) => {
+  //   //       console.log(artist.name);
+  //   //       artist.name.toUpperCase().includes(q.toUpperCase());
+  //   //     }),
+  //   //   });
+  //   // } else {
+  //   //   setFiltered(artists);
+  //   // }
+  // }
 
   const updateLibrary = () => {
     setFiltered(artists);
@@ -69,10 +68,10 @@ const App = () => {
             ) : (
               <div className="main-page">
                 <Header
-                  updateArtistFilter={updateArtistFilter}
-                  setSearch={setSearch}
+                // updateArtistFilter={updateArtistFilter}
+                // setSearch={setSearch} for SEARCH
                 />
-                <Library allArtists={filteredArtists} />
+                <Library allArtists={artists} />
               </div>
             );
           }}
@@ -103,7 +102,7 @@ const App = () => {
                 <ArtistDetails
                   favorites={favorites}
                   setFavorites={setFavorites}
-                  updateLibrary={updateLibrary}
+                  updateLibrary={updateLibrary} //for search bar
                   artistID={match.params.id}
                   key={match.params.id}
                 />
