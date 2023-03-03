@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Header from "../Header/Header";
 import Favorites from "../Favorites/Favorites";
 import Library from "../ArtistLibrary/ArtistLibrary";
@@ -11,12 +11,14 @@ import "./App.css";
 
 const App = () => {
   const [artists, setArtists] = useState([]);
+  const [filteredArtists, setFiltered] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getArtists = () => {
     setLoading(true);
     retrieveAllArtists().then((data) => {
       setArtists(data.artists);
+      setFiltered(data.artists);
       setLoading(false);
     });
   };
@@ -24,6 +26,26 @@ const App = () => {
   useEffect(() => {
     getArtists();
   }, []);
+
+  const updateArtistFilter = useCallback(
+    (q) => {
+      console.log(filteredArtists);
+      if (q.length > 0) {
+        setFiltered({
+          filteredArtists: artists.filter((artist) =>
+            artist.title.toUpperCase().includes(q.toUpperCase())
+          ),
+        });
+      } else {
+        setFiltered(artists);
+      }
+    },
+    [setFiltered]
+  );
+
+  const updateLibrary = () => {
+    setFiltered(artists);
+  };
 
   // const errorModal = error ? <ErrorModal message={error} /> : null;
   return (
@@ -39,8 +61,8 @@ const App = () => {
               </div>
             ) : (
               <div className="main-page">
-                <Header />
-                <Library allArtists={artists} />
+                <Header updateArtistFilter={updateArtistFilter} />
+                <Library allArtists={filteredArtists} />
               </div>
             );
           }}
@@ -66,6 +88,7 @@ const App = () => {
             ) : (
               <div className="single-artist">
                 <ArtistDetails
+                  updateLibrary={updateLibrary}
                   artistID={match.params.id}
                   key={match.params.id}
                 />

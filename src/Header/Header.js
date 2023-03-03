@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/turntable.png";
 import "./Header.css";
 
-const Header = ({ location }) => {
+const Header = (location, props) => {
+  console.log("header:", props);
+
   let navLink;
   if (location === "favorites") {
     navLink = (
@@ -18,6 +20,10 @@ const Header = ({ location }) => {
       </Link>
     );
   }
+  const { onUpdateSearch } = props;
+  const onSearch = (e) => {
+    onUpdateSearch(e.currentTarget.value);
+  };
   return (
     <nav className="header">
       <Link to="/">
@@ -29,6 +35,7 @@ const Header = ({ location }) => {
         name="search"
         type="text"
         placeholder=" Search"
+        onChange={onSearch}
       ></input>
       {navLink}
     </nav>

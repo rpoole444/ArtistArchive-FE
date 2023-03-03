@@ -64,34 +64,44 @@ const ArtistDetails = (props) => {
 
   const handleDelete = () => {
     console.log(artist.id);
-    Promise.all([deleteFromFavorites(artist.id), updateFavStatus(artist)])
-      .then(() => {
-        return retrieveSingleArtist(props).then((data) => {
-          const cleanedArtistData = cleanArtistData(data[0]);
-          setArtist({ selectedBook: cleanedArtistData });
-        });
-      })
-      .catch((error) => setError({ error: error.message }));
+    setArtist((prevArtist) => {
+      prevArtist.isFavorited = !prevArtist.isFavorited;
+      Promise.all([
+        deleteFromFavorites(prevArtist.id),
+        updateFavStatus(prevArtist),
+      ]);
+
+      return { ...prevArtist };
+    }); //BUTTON FUNCTIONS AND FAV STATUS UPDATES, but delete isn't working
+
+    // Promise.all([deleteFromFavorites(artist), updateFavStatus(artist)])
+    //   .then(() => {
+    //     return retrieveSingleArtist(props).then((data) => {
+    //       const cleanedArtistData = cleanArtistData(data[0]);
+    //       setArtist({ selectedBook: cleanedArtistData });
+    //     });
+    //   })
+    //   .catch((error) => setError({ error: error.message }));
   };
 
-  const determineButton = () => {
-    console.log("FIRE BUTTON");
+  // const determineButton = () => {
+  //   console.log("FIRE BUTTON");d
 
-    if (artist.isFavorited === true) {
-      console.log(artist);
-      return (
-        <button className="unfavorite-button" onClick={handleDelete}>
-          Remove from Favorites
-        </button>
-      );
-    } else {
-      return (
-        <button className="favorites-button" onClick={handleAdd}>
-          Add to Favorites
-        </button>
-      );
-    }
-  };
+  //   if (artist.isFavorited === true) {
+  //     console.log(artist);
+  //     return (
+  //       <button className="unfavorite-button" onClick={handleDelete}>
+  //         Remove from Favorites
+  //       </button>
+  //     );
+  //   } else {
+  //     return (
+  //       <button className="favorites-button" onClick={handleAdd}>
+  //         Add to Favorites
+  //       </button>
+  //     );
+  //   }
+  // };
 
   const { name, genre, video, description } = artist;
   // const errorModal = error ? <ErrorModal message={error} /> : null;
