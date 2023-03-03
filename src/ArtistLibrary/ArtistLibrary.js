@@ -3,7 +3,8 @@ import "./ArtistLibrary.css";
 import ArtistCard from "../ArtistCard/ArtistCard";
 import PropTypes from "prop-types";
 
-const ArtistLibrary = ({ allArtists }) => {
+const ArtistLibrary = (props) => {
+  const { allArtists } = props;
   const mappedArtists =
     allArtists.length > 0 ? (
       allArtists.map((artist) => {
@@ -21,7 +22,11 @@ const ArtistLibrary = ({ allArtists }) => {
     ) : (
       <div className="no-artist">No Artists Matched Your Search</div>
     );
-  return <div className="artists-container">{mappedArtists}</div>;
+  return (
+    <div>
+      <div className="artists-container">{mappedArtists}</div>
+    </div>
+  );
 };
 
 export default ArtistLibrary;

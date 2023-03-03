@@ -1,0 +1,34 @@
+{
+  "artists": [
+    {
+      "id": "1",
+      "name": "Louis Armstrong",
+      "image": "https://www.celebstoner.com/assets/components/directresize/cache/dr_LouisArmstrongSmoking_w625_h495.jpg",
+      "rank": 1,
+      "description": "Louis Armstrong was born in New Orleans, Louisiana on August 4, 1901. He was raised by his mother Mayann in a neighborhood so dangerous it was called “The Battlefield.” He only had a fifth-grade education, dropping out of school early to go to work. An early job working for the Jewish Karnofsky family allowed Armstrong to make enough money to purchase his first cornet.  On New Year’s Eve 1912, he was arrested and sent to the Colored Waif’s Home for Boys. There, under the tutelage of Peter Davis, he learned how to properly play the cornet, eventually becoming the leader of the Waif’s Home Brass Band. Released from the Waif’s Home in 1914, Armstrong set his sights on becoming a professional musician. Mentored by the city’s top cornetist, Joe “King” Oliver, Armstrong soon became one of the most in-demand cornetists in town, eventually working steadily on Mississippi riverboats. In 1922, King Oliver sent for Armstrong to join his band in Chicago. Armstrong and Oliver became the talk of the town with their intricate two-cornet breaks and started making records together in 1923. By that point, Armstrong began dating the pianist in the band, Lillian Hardin. In 1924, Armstrong married Hardin, who urged Armstrong to leave Oliver and try to make it on his own. A year in New York with Fletcher Henderson and His Orchestra proved unsatisfying so Armstrong returned to Chicago in 1925 and began making records under his own name for the first time. ",
+      "genre": "Jazz",
+      "video": "gEdq64SIp4E",
+      "isFavorited": false
+    },
+    {
+      "id": "2",
+      "name": "Duke Ellington",
+      "image": "https://i.etsystatic.com/32739938/r/il/f368b5/3674648375/il_340x270.3674648375_coyf.jpg",
+      "rank": 2,
+      "description": "A major figure in the history of jazz music, Duke Ellington's career spanned more than half a century, during which time he composed thousands of songs for the stage, screen and contemporary songbook. He created one of the most distinctive ensemble sounds in Western music and continued to play what he called American Music until shortly before his death in 1974. Born on April 29, 1899, Ellington was raised by two talented, musical parents in a middle-class neighborhood of Washington, D.C. At the age of seven, he began studying piano and earned the nickname Duke for his gentlemanly ways. Inspired by his job as a soda jerk, he wrote his first composition, Soda Fountain Rag, at the age of 15. Despite being awarded an art scholarship to the Pratt Institute in Brooklyn, New York, Ellington followed his passion for ragtime and began to play professionally at age 17.In the 1920s, Ellington performed in Broadway nightclubs as the bandleader of a sextet, a group which in time grew to a 10-piece ensemble. Ellington sought out musicians with unique playing styles, such as Bubber Miley, who used a plunger to make the wa-wa sound, and Joe Nanton, who gave the world his trombone growl. At various times, his ensemble included the trumpeter Cootie Williams, cornetist Rex Stewart and alto saxophonist Johnny Hodges. Ellington made hundreds of recordings with his bands, appeared in films and on radio, and toured Europe on two occasions in the 1930s.",
+      "genre": "Jazz",
+      "video": "RTFK1M5hY0A",
+      "isFavorited": false
+    },
+    {
+      "id": "3",
+      "name": "John Coltrane",
+      "image": "https://cdn.britannica.com/22/7722-004-BC536F2A/John-Coltrane-1966.jpg",
+      "rank": 3,
+      "description": "John Coltrane, in full John William Coltrane, byname Trane, (born September 23, 1926, Hamlet, North Carolina, U.S.—died July 17, 1967, Huntington, New York), American jazz saxophonist, bandleader, and composer, an iconic figure of 20th-century jazz. Coltrane’s first musical influence was his father, a tailor and part-time musician. John studied clarinet and alto saxophone as a youth and then moved to Philadelphia in 1943 and continued his studies at the Ornstein School of Music and the Granoff Studios. He was drafted into the navy in 1945 and played alto sax with a navy band until 1946; he switched to tenor saxophone in 1947. During the late 1940s and early ’50s, he played in nightclubs and on recordings with such musicians as Eddie (“Cleanhead”) Vinson, Dizzy Gillespie, Earl Bostic, and Johnny Hodges. Coltrane’s first recorded solo can be heard on Gillespie’s “We Love to Boogie” (1951).   Coltrane came to prominence when he joined Miles Davis’s quintet in 1955. His abuse of drugs and alcohol during this period led to unreliability, and Davis fired him in early 1957. He embarked on a six-month stint with Thelonious Monk and began to make recordings under his own name; each undertaking demonstrated a newfound level of technical discipline, as well as increased harmonic and rhythmic sophistication. ",
+      "genre": "Jazz",
+      "video": "qYMO133wY0s",
+      "isFavorited": false
+    }
+  ]
+}
