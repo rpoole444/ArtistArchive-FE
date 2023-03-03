@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/turntable.png";
 import "./Header.css";
+import PropTypes from "prop-types";
 
 const Header = (props) => {
   const { location } = props;
@@ -33,3 +34,7 @@ const Header = (props) => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  location: PropTypes.string,
+};
