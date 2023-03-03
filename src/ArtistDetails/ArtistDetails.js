@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./ArtistDetails.css";
-import {
-  retrieveSingleArtist,
-  addArtistToFavorites,
-  getAllFavorites,
-  deleteFromFavorites,
-  updateFavStatus,
-} from "../apiCalls";
-import { trimArtistData, cleanArtistData } from "../utilities";
-import { NavLink, Link } from "react-router-dom";
+import { retrieveSingleArtist } from "../apiCalls";
+import { NavLink } from "react-router-dom";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
 const ArtistDetails = (props) => {
   const [artist, setArtist] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  // const [favorited, setFavorited] = useState(false);
+  const [favorited, setFavorited] = useState(false);
 
   const getArtist = () => {
     setLoading(true);
@@ -31,77 +24,27 @@ const ArtistDetails = (props) => {
     getArtist();
   }, []); //watch something from here look up useEffect and []
 
+  useEffect(() => {
+    for (let el of props.favorites) {
+      if (el.id === artist.id) {
+        setFavorited(true);
+      }
+    }
+  });
   const handleAdd = () => {
-    setArtist((prevArtist) => {
-      prevArtist.isFavorited = !prevArtist.isFavorited;
-      Promise.all([
-        addArtistToFavorites(prevArtist),
-        updateFavStatus(prevArtist),
-      ]);
-      // .then((data) => {
-      //   setArtist(data);
-      // });
-
-      return { ...prevArtist };
+    props.setFavorites((favorites) => {
+      return [...favorites, artist];
     });
-
-    console.log("state:", artist);
-
-    // setArtist({ isFavorited: true });
-    // Promise.all([addArtistToFavorites(artist), updateFavStatus(artist)])
-    //   .then(() => {
-
-    //     return retrieveSingleArtist(props).then((data) => {
-    //       const cleanedArtistData = cleanArtistData(data[0]);
-
-    //       setArtist(cleanedArtistData);
-    //     });
-    //   })
-    //   .catch((error) => setError({ error: error.message }));
+    setFavorited(true);
   };
-
-  console.log("state, Outside:", artist);
 
   const handleDelete = () => {
-    console.log(artist.id);
-    setArtist((prevArtist) => {
-      prevArtist.isFavorited = !prevArtist.isFavorited;
-      Promise.all([
-        deleteFromFavorites(prevArtist.id),
-        updateFavStatus(prevArtist),
-      ]);
-
-      return { ...prevArtist };
-    }); //BUTTON FUNCTIONS AND FAV STATUS UPDATES, but delete isn't working
-
-    // Promise.all([deleteFromFavorites(artist), updateFavStatus(artist)])
-    //   .then(() => {
-    //     return retrieveSingleArtist(props).then((data) => {
-    //       const cleanedArtistData = cleanArtistData(data[0]);
-    //       setArtist({ selectedBook: cleanedArtistData });
-    //     });
-    //   })
-    //   .catch((error) => setError({ error: error.message }));
+    setFavorited(false);
+    const filtered = props.favorites.filter((el) => {
+      return el.id !== artist.id;
+    });
+    props.setFavorites(filtered);
   };
-
-  // const determineButton = () => {
-  //   console.log("FIRE BUTTON");d
-
-  //   if (artist.isFavorited === true) {
-  //     console.log(artist);
-  //     return (
-  //       <button className="unfavorite-button" onClick={handleDelete}>
-  //         Remove from Favorites
-  //       </button>
-  //     );
-  //   } else {
-  //     return (
-  //       <button className="favorites-button" onClick={handleAdd}>
-  //         Add to Favorites
-  //       </button>
-  //     );
-  //   }
-  // };
 
   const { name, genre, video, description } = artist;
   // const errorModal = error ? <ErrorModal message={error} /> : null;
@@ -135,16 +78,16 @@ const ArtistDetails = (props) => {
           <NavLink to="/">
             <button className="home-button">Back Home</button>
           </NavLink>
+          {favorited ? (
+            <button className="unfavorite-button" onClick={handleDelete}>
+              Remove from Favorites
+            </button>
+          ) : (
+            <button className="favorites-button" onClick={handleAdd}>
+              Add to Favorites
+            </button>
+          )}
         </section>
-        {artist.isFavorited ? (
-          <button className="unfavorite-button" onClick={handleDelete}>
-            Remove from Favorites
-          </button>
-        ) : (
-          <button className="favorites-button" onClick={handleAdd}>
-            Add to Favorites
-          </button>
-        )}
       </section>
     </section>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Favorites from "../Favorites/Favorites";
 import Library from "../ArtistLibrary/ArtistLibrary";
@@ -12,13 +12,15 @@ import "./App.css";
 const App = () => {
   const [artists, setArtists] = useState([]);
   const [filteredArtists, setFiltered] = useState([]);
+  const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(false);
+  // const [search, setSearch] = useState("");
 
   const getArtists = () => {
     setLoading(true);
     retrieveAllArtists().then((data) => {
       setArtists(data.artists);
-      setFiltered(data.artists);
+      setFiltered(data.artists); //for searchbar
       setLoading(false);
     });
   };
@@ -27,21 +29,25 @@ const App = () => {
     getArtists();
   }, []);
 
-  const updateArtistFilter = useCallback(
-    (q) => {
-      console.log(filteredArtists);
-      if (q.length > 0) {
-        setFiltered({
-          filteredArtists: artists.filter((artist) =>
-            artist.title.toUpperCase().includes(q.toUpperCase())
-          ),
-        });
-      } else {
-        setFiltered(artists);
-      }
-    },
-    [setFiltered]
-  );
+  // function updateArtistFilter(q) {  //search bar
+  //   setSearch(q);
+  //   console.log(q);
+  //   // console.log(filteredArtists);
+  //   const filteredData = filteredArtists.filter((item) => {
+  //     return item.toUpperCase().includes(search.toUpperCase());
+  //   });
+  //   console.log(filteredData);
+  //   // if (q.length > 0) {
+  //   //   setFiltered({
+  //   //     filteredArtists: artists.filter((artist) => {
+  //   //       console.log(artist.name);
+  //   //       artist.name.toUpperCase().includes(q.toUpperCase());
+  //   //     }),
+  //   //   });
+  //   // } else {
+  //   //   setFiltered(artists);
+  //   // }
+  // }
 
   const updateLibrary = () => {
     setFiltered(artists);
@@ -61,8 +67,11 @@ const App = () => {
               </div>
             ) : (
               <div className="main-page">
-                <Header updateArtistFilter={updateArtistFilter} />
-                <Library allArtists={filteredArtists} />
+                <Header
+                // updateArtistFilter={updateArtistFilter}
+                // setSearch={setSearch} for SEARCH
+                />
+                <Library allArtists={artists} />
               </div>
             );
           }}
@@ -73,7 +82,10 @@ const App = () => {
           render={({ match }) => {
             return [
               <Header location="favorites" key={match + "-header"} />,
-              <Favorites key={match + "-artist-details"} />,
+              <Favorites
+                favorites={favorites}
+                key={match + "-artist-details"}
+              />,
             ];
           }}
         />
@@ -88,7 +100,9 @@ const App = () => {
             ) : (
               <div className="single-artist">
                 <ArtistDetails
-                  updateLibrary={updateLibrary}
+                  favorites={favorites}
+                  setFavorites={setFavorites}
+                  updateLibrary={updateLibrary} //for search bar
                   artistID={match.params.id}
                   key={match.params.id}
                 />
