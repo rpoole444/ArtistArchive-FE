@@ -4,7 +4,7 @@ import logo from "../assets/turntable.png";
 import "./Header.css";
 
 const Header = (props) => {
-  const { location, updateArtistFilter, setSearch } = props;
+  const { location } = props;
 
   let navLink;
   if (location === "favorites") {
@@ -21,20 +21,12 @@ const Header = (props) => {
     );
   }
 
-  const onSearch = (e) => {
-    updateArtistFilter(e);
-  };
   return (
     <nav className="header">
       <Link to="/">
         <img className="record-icon" src={logo} alt="turntable" />
       </Link>
       <h1 className="app-title">Artist Archive</h1>
-      <input
-        className="search"
-        placeholder=" Search"
-        onChange={(e) => onSearch(e.target.value)}
-      ></input>
       {navLink}
     </nav>
   );

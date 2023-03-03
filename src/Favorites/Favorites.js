@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ArtistLibrary from "../ArtistLibrary/ArtistLibrary";
 
 const Favorites = (props) => {
-  const [error, setError] = useState("");
-
   return (
     <>
       {!props.favorites.length && ( //declare new variable for props.
