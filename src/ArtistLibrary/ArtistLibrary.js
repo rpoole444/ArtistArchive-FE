@@ -1,6 +1,7 @@
 import React from "react";
 import "./ArtistLibrary.css";
 import ArtistCard from "../ArtistCard/ArtistCard";
+import PropTypes from "prop-types";
 
 const ArtistLibrary = ({ allArtists }) => {
   const mappedArtists =
@@ -24,3 +25,7 @@ const ArtistLibrary = ({ allArtists }) => {
 };
 
 export default ArtistLibrary;
+
+ArtistLibrary.propTypes = {
+  allArtists: PropTypes.array,
+};

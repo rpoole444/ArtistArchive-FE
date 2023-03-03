@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ArtistDetails.css";
 import { retrieveSingleArtist } from "../apiCalls";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
 const ArtistDetails = (props) => {
@@ -10,9 +11,10 @@ const ArtistDetails = (props) => {
   const [error, setError] = useState("");
   const [favorited, setFavorited] = useState(false);
 
+  const { artistID, favorites, setFavorites } = props;
   const getArtist = () => {
     setLoading(true);
-    retrieveSingleArtist(props)
+    retrieveSingleArtist(artistID)
       .then((artistData) => {
         setArtist(artistData);
         setLoading(false);
@@ -25,14 +27,14 @@ const ArtistDetails = (props) => {
   }, []);
 
   useEffect(() => {
-    for (let el of props.favorites) {
+    for (let el of favorites) {
       if (el.id === artist.id) {
         setFavorited(true);
       }
     }
-  }, [props.favorites, artist.id]);
+  }, [favorites, artist.id]);
   const handleAdd = () => {
-    props.setFavorites((favorites) => {
+    setFavorites((favorites) => {
       return [...favorites, artist];
     });
     setFavorited(true);
@@ -40,10 +42,10 @@ const ArtistDetails = (props) => {
 
   const handleDelete = () => {
     setFavorited(false);
-    const filtered = props.favorites.filter((el) => {
+    const filtered = favorites.filter((el) => {
       return el.id !== artist.id;
     });
-    props.setFavorites(filtered);
+    setFavorites(filtered);
   };
 
   const { name, genre, video, description } = artist;
@@ -94,3 +96,9 @@ const ArtistDetails = (props) => {
 };
 
 export default ArtistDetails;
+
+ArtistDetails.propTypes = {
+  artistID: PropTypes.string,
+  favorites: PropTypes.array,
+  setFavorites: PropTypes.func,
+};
