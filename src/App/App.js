@@ -84,7 +84,7 @@ const App = () => {
           <ErrorPage />
         </Route>
       </Switch>
-      {/* {errorModal} */}
+      {/* <ErrorPage /> */}
     </main>
   );
 };

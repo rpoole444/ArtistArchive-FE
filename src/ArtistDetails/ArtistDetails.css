@@ -122,5 +122,6 @@ article::-webkit-scrollbar {
 .bio {
   height: 30vh;
 }
+
 @media (min-width: 768px) {
 }

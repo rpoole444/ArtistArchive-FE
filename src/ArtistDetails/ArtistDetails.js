@@ -3,6 +3,7 @@ import "./ArtistDetails.css";
 import { retrieveSingleArtist } from "../apiCalls";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import ErrorPage from "../ErrorHandling/ErrorPage";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
 const ArtistDetails = (props) => {
@@ -50,8 +51,8 @@ const ArtistDetails = (props) => {
   };
 
   const { name, genre, video, description } = artist;
-  // const errorModal = error ? <ErrorModal message={error} /> : null;
-  return (
+
+  return artist.name ? (
     <section className="artist-details">
       <section className="artist-container">
         <div className="to-faves">
@@ -93,6 +94,8 @@ const ArtistDetails = (props) => {
         </section>
       </section>
     </section>
+  ) : (
+    <ErrorPage />
   );
 };
 
