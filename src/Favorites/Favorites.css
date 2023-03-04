@@ -1,5 +1,9 @@
 .empty-favorites {
-  color: black;
+  color: snow;
+  background-color: #054b91b4;
+  font-size: medium;
+  border-radius: 4px;
+
 }
 
 .favorites-container {
@@ -7,7 +11,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #81a4cddc;
+  /* background-color: #81a4cddc; */
   width: 97%;
   height: 97%;
 }

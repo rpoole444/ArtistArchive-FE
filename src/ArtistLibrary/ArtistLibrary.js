@@ -3,7 +3,8 @@ import "./ArtistLibrary.css";
 import ArtistCard from "../ArtistCard/ArtistCard";
 import PropTypes from "prop-types";
 
-const ArtistLibrary = ({ allArtists }) => {
+const ArtistLibrary = (props) => {
+  const { allArtists } = props;
   const mappedArtists =
     allArtists.length > 0 ? (
       allArtists.map((artist) => {
@@ -24,7 +25,11 @@ const ArtistLibrary = ({ allArtists }) => {
         <p>Go Back and Listen!</p>
       </div>
     );
-  return <div className="artists-container">{mappedArtists}</div>;
+  return (
+    <div className="artista">
+      <div className="artists-container">{mappedArtists}</div>
+    </div>
+  );
 };
 
 export default ArtistLibrary;

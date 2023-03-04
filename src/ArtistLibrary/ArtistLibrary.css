@@ -8,12 +8,17 @@
   margin-top: 5vh;
 }
 
+/* .artista{
+  display: flex;
+  
+} */
+
 .artists-container {
   height: 97%;
-  width: 97%;
+  width: 104%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 27px;
+  grid-gap: 3px;
   justify-items: space-evenly;
   align-items: center;
   place-items: center;
