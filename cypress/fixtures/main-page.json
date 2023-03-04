@@ -11,24 +11,28 @@
       "isFavorited": false
     },
     {
-      "id": "2",
-      "name": "Duke Ellington",
-      "image": "https://i.etsystatic.com/32739938/r/il/f368b5/3674648375/il_340x270.3674648375_coyf.jpg",
-      "rank": 2,
-      "description": "A major figure in the history of jazz music, Duke Ellington's career spanned more than half a century, during which time he composed thousands of songs for the stage, screen and contemporary songbook. He created one of the most distinctive ensemble sounds in Western music and continued to play what he called American Music until shortly before his death in 1974. Born on April 29, 1899, Ellington was raised by two talented, musical parents in a middle-class neighborhood of Washington, D.C. At the age of seven, he began studying piano and earned the nickname Duke for his gentlemanly ways. Inspired by his job as a soda jerk, he wrote his first composition, Soda Fountain Rag, at the age of 15. Despite being awarded an art scholarship to the Pratt Institute in Brooklyn, New York, Ellington followed his passion for ragtime and began to play professionally at age 17.In the 1920s, Ellington performed in Broadway nightclubs as the bandleader of a sextet, a group which in time grew to a 10-piece ensemble. Ellington sought out musicians with unique playing styles, such as Bubber Miley, who used a plunger to make the wa-wa sound, and Joe Nanton, who gave the world his trombone growl. At various times, his ensemble included the trumpeter Cootie Williams, cornetist Rex Stewart and alto saxophonist Johnny Hodges. Ellington made hundreds of recordings with his bands, appeared in films and on radio, and toured Europe on two occasions in the 1930s.",
-      "genre": "Jazz",
-      "video": "RTFK1M5hY0A",
-      "isFavorited": false
-    },
+    "id": "24",
+    "name": "J Dilla",
+    "image":
+      "https://media.gq.com/photos/57124fccbf3a8ba177b0c911/4:3/w_1000,h_750,c_limit/j-dilla-02.jpg",
+    "rank": 24,
+    "description":
+      "J Dilla (1974-2006) was an American hip hop producer and rapper who is widely regarded as one of the most influential figures in modern music. He developed a passion for production at a young age and later worked with some of the leading artists in hip hop including A Tribe Called Quest, The Pharcyde, De La Soul, Madlib, and Erykah Badu. His innovative approach to sampling combined elements from various genres such as jazz, soul, funk and more. J Dilla's influence extends beyond music; he also helped establish Detroit's underground hip hop scene by giving aspiring local producers access to his studio equipment. His legacy continues today through his recordings which have been covered by numerous artists over the years. He is remembered as one of the greatest hip hop producers ever.",
+    "genre": "Hip-Hop",
+    "video": "Agl1TgVfls0",
+    "isFavorited": false
+  },
     {
-      "id": "3",
-      "name": "John Coltrane",
-      "image": "https://cdn.britannica.com/22/7722-004-BC536F2A/John-Coltrane-1966.jpg",
-      "rank": 3,
-      "description": "John Coltrane, in full John William Coltrane, byname Trane, (born September 23, 1926, Hamlet, North Carolina, U.S.—died July 17, 1967, Huntington, New York), American jazz saxophonist, bandleader, and composer, an iconic figure of 20th-century jazz. Coltrane’s first musical influence was his father, a tailor and part-time musician. John studied clarinet and alto saxophone as a youth and then moved to Philadelphia in 1943 and continued his studies at the Ornstein School of Music and the Granoff Studios. He was drafted into the navy in 1945 and played alto sax with a navy band until 1946; he switched to tenor saxophone in 1947. During the late 1940s and early ’50s, he played in nightclubs and on recordings with such musicians as Eddie (“Cleanhead”) Vinson, Dizzy Gillespie, Earl Bostic, and Johnny Hodges. Coltrane’s first recorded solo can be heard on Gillespie’s “We Love to Boogie” (1951).   Coltrane came to prominence when he joined Miles Davis’s quintet in 1955. His abuse of drugs and alcohol during this period led to unreliability, and Davis fired him in early 1957. He embarked on a six-month stint with Thelonious Monk and began to make recordings under his own name; each undertaking demonstrated a newfound level of technical discipline, as well as increased harmonic and rhythmic sophistication. ",
-      "genre": "Jazz",
-      "video": "qYMO133wY0s",
-      "isFavorited": false
-    }
+    "id": "30",
+   "name": "Randy Newman",
+    "image":
+      "https://media.pitchfork.com/photos/5e40c6d00ad70b00084a00c5/2:1/w_2560%2Cc_limit/Randy%2520Newman-GettyImages-1205160724.jpg",
+    "rank": 30,
+    "description":
+      "Randy Newman (born 1943) is an American singer-songwriter who has become one of the most influential figures in contemporary music. He developed an early interest in composition and later studied music at UCLA before embarking on a career that spanned several decades. His recordings have showcased his unique songwriting style which combines elements from various genres such as rock, pop, jazz, blues and more while also exploring themes such as love, loss and human nature. In addition to being recognized for his musical talent, Randy Newman is also an advocate for social justice issues through initiatives such as The Voice Project. His influence continues today through both his songs and activism making him one of the most important figures in modern music.",
+    "genre": "Pop",
+    "video": "1wFWR5qCB2k",
+    "isFavorited": false
+  }
   ]
 }

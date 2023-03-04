@@ -3,28 +3,26 @@ import "./ArtistDetails.css";
 import { retrieveSingleArtist } from "../apiCalls";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import ErrorPage from "../ErrorHandling/ErrorPage";
 // import ErrorModal from "../ErrorHandling/ErrorModal";
 
 const ArtistDetails = (props) => {
   const [artist, setArtist] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [, setError] = useState("");
   const [favorited, setFavorited] = useState(false);
 
   const { artistID, favorites, setFavorites } = props;
   const getArtist = () => {
-    setLoading(true);
     retrieveSingleArtist(artistID)
       .then((artistData) => {
         setArtist(artistData);
-        setLoading(false);
       })
       .catch((error) => setError({ error: error.message }));
   };
 
   useEffect(() => {
     getArtist();
-  }, []);
+  }, [getArtist]);
 
   useEffect(() => {
     for (let el of favorites) {
@@ -33,9 +31,10 @@ const ArtistDetails = (props) => {
       }
     }
   }, [favorites, artist.id]);
+
   const handleAdd = () => {
-    setFavorites((favorites) => {
-      return [...favorites, artist];
+    setFavorites((prevFavorites) => {
+      return [...prevFavorites, artist];
     });
     setFavorited(true);
   };
@@ -49,20 +48,16 @@ const ArtistDetails = (props) => {
   };
 
   const { name, genre, video, description } = artist;
-  // const errorModal = error ? <ErrorModal message={error} /> : null;
-  return loading ? (
-    <div className="loading-page">
-      <h3 className="loading-text">Loading...</h3>
-    </div>
-  ) : (
+
+  return artist.name ? (
     <section className="artist-details">
       <section className="artist-container">
         <div className="to-faves">
           <NavLink exact to="/favorites">
             <button className="favorites-button">To Favorites</button>
           </NavLink>
+          <h1 className="artist-name">{name}</h1>
         </div>
-        <h1 className="artist-name">{name}</h1>
         <section className="artist-video">
           {video ? (
             <iframe
@@ -77,7 +72,7 @@ const ArtistDetails = (props) => {
           )}
         </section>
         <section className="details-container">
-          <p>{`Genre: ${genre}`}</p>
+          <p className="genre-deet">{`Genre: ${genre}`}</p>
           <article className="bio">{description}</article>
         </section>
         <section className="buttons-container">
@@ -96,6 +91,8 @@ const ArtistDetails = (props) => {
         </section>
       </section>
     </section>
+  ) : (
+    <ErrorPage />
   );
 };
 

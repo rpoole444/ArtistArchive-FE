@@ -1,0 +1,13 @@
+.empty-favorites {
+  color: black;
+}
+
+.favorites-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #81a4cddc;
+  width: 97%;
+  height: 97%;
+}

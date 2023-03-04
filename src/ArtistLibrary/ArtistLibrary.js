@@ -20,7 +20,10 @@ const ArtistLibrary = (props) => {
         );
       })
     ) : (
-      <div className="no-artist">No Artists Matched Your Search</div>
+      <div className="no-artist">
+        <p>Where are your favorites?</p>
+        <p>Go Back and Listen!</p>
+      </div>
     );
   return (
     <div>

@@ -79,12 +79,12 @@ const App = () => {
             );
           }}
         />
-        <Route>
+        <Route path="*">
           <Header />
           <ErrorPage />
         </Route>
       </Switch>
-      {/* {errorModal} */}
+      {/* <ErrorPage /> */}
     </main>
   );
 };
