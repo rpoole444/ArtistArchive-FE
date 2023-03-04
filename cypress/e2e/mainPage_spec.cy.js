@@ -42,17 +42,15 @@ describe("Artist Archive Main Page, should see all artist and details", () => {
   })
 
   it("Should be able to go to Favorites Page", () => {
-    cy.intercept("GET", "http://localhost:3001/api/v1/artists", {
-      fixture: "main-page.json",
-    });
-    cy.visit("http://localhost:3000");
-
     cy.get(".favorites-link").click()
+    cy.url("http://localhost:3000/").should('include', "favorites")
+    
     cy.get(".favorites-container")
       .should("contain", "You haven't favorited any musicians yet!")
     
-      cy.contains("Where are your favorites?")
-      cy.contains("Go Back and Listen!")
+    cy.contains("Where are your favorites?")
+    cy.contains("Go Back and Listen!")
+
     })
 
   
