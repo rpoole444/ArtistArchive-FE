@@ -79,7 +79,7 @@ const App = () => {
             );
           }}
         />
-        <Route>
+        <Route path="*">
           <Header />
           <ErrorPage />
         </Route>
