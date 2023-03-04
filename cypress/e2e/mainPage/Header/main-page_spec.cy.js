@@ -6,6 +6,10 @@ describe("Artist Archive Main Page, should see all artist and details", () => {
     cy.visit("http://localhost:3000");
   });
 
+  it("Header should have and image title and yourfavorites button", () => {
+
+  })
+  
   it("Should display a title, cards that includes artists, with name, image, Genre, rank and learn more button", () => {
     cy.contains("Artist Archive");
 
