@@ -13,16 +13,74 @@
 
 .app-title {
   font-size: 5vh;
+  color: snow;
 }
 
 .record-icon {
   height: 15vh;
+  width: 15vh;
 }
 
 .landing-page-link,
 .favorites-link {
   font-family: "Yeseva One";
   text-decoration: none;
-  color: black;
+  color: snow;
   font-size: medium;
+}
+
+@media screen and (max-width: 500px) {
+  .app-title {
+    font-size: 5vh;
+  }
+
+  .record-icon {
+    height: 15vh;
+    width: 15vh;
+  }
+
+  .landing-page-link,
+  .favorites-link {
+    font-family: "Yeseva One";
+    text-decoration: none;
+    color: snow;
+    font-size: medium;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 743px) {
+  .app-title {
+    font-size: 5vh;
+  }
+
+  .record-icon {
+    height: 15vh;
+    width: 15vh;
+  }
+
+  .landing-page-link,
+  .favorites-link {
+    font-family: "Yeseva One";
+    text-decoration: none;
+    color: snow;
+    font-size: medium;
+  }
+}
+@media screen and (min-width: 743px) and (max-width: 1023px) {
+  .app-title {
+    font-size: 5vh;
+  }
+
+  .record-icon {
+    height: 15vh;
+    width: 15vh;
+  }
+
+  .landing-page-link,
+  .favorites-link {
+    font-family: "Yeseva One";
+    text-decoration: none;
+    color: snow;
+    font-size: medium;
+  }
 }

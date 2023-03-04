@@ -11,9 +11,11 @@ const ArtistCard = ({ id, image, name, genre, rank }) => {
         <p className="card-genre">{`Genre: ${genre}`}</p>
         <p className="card-rank">{`Rank: ${rank}`}</p>
       </div>
-      <Link key={id} to={`/${id}`} className="learn-more-button">
-        <button className="learn-more">Learn More</button>
-      </Link>
+      <div className="lm-button">
+        <Link key={id} to={`/${id}`} className="learn-more-button">
+          <button className="learn-more">Learn More</button>
+        </Link>
+      </div>
     </section>
   );
 };
