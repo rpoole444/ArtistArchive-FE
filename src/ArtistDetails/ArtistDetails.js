@@ -10,6 +10,7 @@ const ArtistDetails = (props) => {
   const [artist, setArtist] = useState({});
   const [, setError] = useState("");
   const [favorited, setFavorited] = useState(false);
+  const [isFetching, setFetch] = useState(false)
 
   const { artistID, favorites, setFavorites } = props;
   const getArtist = () => {
@@ -21,7 +22,10 @@ const ArtistDetails = (props) => {
   };
 
   useEffect(() => {
-    getArtist();
+    if(!isFetching){
+      getArtist();
+      setFetch(true)
+    } 
   }, [getArtist]);
 
   useEffect(() => {
@@ -53,7 +57,7 @@ const ArtistDetails = (props) => {
     <section className="artist-details">
       <section className="artist-container">
         <div className="to-faves">
-          <NavLink exact to="/favorites">
+          <NavLink exact to="/favorites" className="favorites-button">
             <button className="favorites-button">To Favorites</button>
           </NavLink>
           <h1 className="artist-name">{name}</h1>
@@ -61,6 +65,7 @@ const ArtistDetails = (props) => {
         <section className="artist-video">
           {video ? (
             <iframe
+              id="youtube-video"
               src={`https://www.youtube.com/embed/${video}`}
               allowFullScreen
               title="video"

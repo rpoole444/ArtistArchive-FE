@@ -27,8 +27,12 @@ const Header = (props) => {
       <Link to="/">
         <img className="record-icon" src={logo} alt="turntable" />
       </Link>
-      <h1 className="app-title">Artist Archive</h1>
-      {navLink}
+      <div className="title-container">
+        <h1 className="app-title">Artist Archive</h1>
+      </div>
+      <div className="nav-link-container">
+        {navLink}
+      </div>
     </nav>
   );
 };

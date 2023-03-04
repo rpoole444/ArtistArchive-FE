@@ -26,7 +26,7 @@ const ArtistLibrary = (props) => {
       </div>
     );
   return (
-    <div>
+    <div className="artista">
       <div className="artists-container">{mappedArtists}</div>
     </div>
   );

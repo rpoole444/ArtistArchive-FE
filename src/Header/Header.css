@@ -6,16 +6,29 @@
   align-items: center;
 }
 
-.search {
-  height: 2vh;
-  width: 15vw;
-}
-
 .app-title {
-  font-size: 5vh;
+  font-size: 2em;
   color: snow;
 }
+.title-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #054b91ed;
+  border-radius: 12px;
+  width:25vw;
+  height: 10vh;
+}
 
+.nav-link-container{
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #054b91ed;
+  border-radius: 12px;
+  width:15vw;
+  height: 8vh;
+}
 .record-icon {
   height: 15vh;
   width: 15vh;
@@ -31,7 +44,7 @@
 
 @media screen and (max-width: 500px) {
   .app-title {
-    font-size: 5vh;
+    font-size: 2em;
   }
 
   .record-icon {
@@ -68,7 +81,7 @@
 }
 @media screen and (min-width: 743px) and (max-width: 1023px) {
   .app-title {
-    font-size: 5vh;
+    font-size: 2em;
   }
 
   .record-icon {
