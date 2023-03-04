@@ -8,24 +8,21 @@ import ErrorPage from "../ErrorHandling/ErrorPage";
 
 const ArtistDetails = (props) => {
   const [artist, setArtist] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [, setError] = useState("");
   const [favorited, setFavorited] = useState(false);
 
   const { artistID, favorites, setFavorites } = props;
   const getArtist = () => {
-    setLoading(true);
     retrieveSingleArtist(artistID)
       .then((artistData) => {
         setArtist(artistData);
-        setLoading(false);
       })
       .catch((error) => setError({ error: error.message }));
   };
 
   useEffect(() => {
     getArtist();
-  }, []);
+  }, [getArtist]);
 
   useEffect(() => {
     for (let el of favorites) {
