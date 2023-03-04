@@ -33,9 +33,10 @@ const ArtistDetails = (props) => {
       }
     }
   }, [favorites, artist.id]);
+
   const handleAdd = () => {
-    setFavorites((favorites) => {
-      return [...favorites, artist];
+    setFavorites((prevFavorites) => {
+      return [...prevFavorites, artist];
     });
     setFavorited(true);
   };
@@ -57,8 +58,8 @@ const ArtistDetails = (props) => {
           <NavLink exact to="/favorites">
             <button className="favorites-button">To Favorites</button>
           </NavLink>
+          <h1 className="artist-name">{name}</h1>
         </div>
-        <h1 className="artist-name">{name}</h1>
         <section className="artist-video">
           {video ? (
             <iframe
@@ -73,7 +74,7 @@ const ArtistDetails = (props) => {
           )}
         </section>
         <section className="details-container">
-          <p>{`Genre: ${genre}`}</p>
+          <p className="genre-deet">{`Genre: ${genre}`}</p>
           <article className="bio">{description}</article>
         </section>
         <section className="buttons-container">
