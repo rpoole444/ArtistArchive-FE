@@ -4,7 +4,6 @@ import Favorites from "../Favorites/Favorites";
 import Library from "../ArtistLibrary/ArtistLibrary";
 import ArtistDetails from "../ArtistDetails/ArtistDetails";
 import ErrorPage from "../ErrorHandling/ErrorPage";
-// import ErrorModal from "../ErrorHandling/ErrorModal";
 import { retrieveAllArtists } from "../apiCalls";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -26,7 +25,6 @@ const App = () => {
     getArtists();
   }, []);
 
-  // const errorModal = error ? <ErrorModal message={error} /> : null;
   return (
     <main className="App">
       <Switch>
@@ -50,13 +48,17 @@ const App = () => {
           exact
           path="/favorites"
           render={({ match }) => {
-            return [
+            return loading ? (
+              <div className="loading-page">
+                <h3 className="loading-text">Loading...</h3>
+              </div>
+            ) : ([
               <Header location="favorites" key={match + "-header"} />,
               <Favorites
                 favorites={favorites}
                 key={match + "-artist-details"}
               />,
-            ];
+            ])
           }}
         />
         <Route
@@ -84,7 +86,6 @@ const App = () => {
           <ErrorPage />
         </Route>
       </Switch>
-      {/* <ErrorPage /> */}
     </main>
   );
 };

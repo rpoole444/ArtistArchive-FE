@@ -14,7 +14,7 @@
 }
 
 .card-image {
-  height: 12vh;
+  height: 10vh;
 }
 
 .card-styler {
@@ -52,4 +52,63 @@
 
 lm-button {
   height: auto;
+}
+
+
+@media screen and (max-width: 320px) {
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 25vh;
+  width: 25vw;
+  border: 4px solid #054a91;
+  background-color: #dbe4ee;
+  margin: 1vh;
+  border-radius: 7px;
+  -webkit-box-shadow: 8px 6px 17px 11px rgba(0, 0, 0, 0.39);
+  box-shadow: 8px 6px 17px 11px rgba(0, 0, 0, 0.39);
+}
+
+.card-image {
+  height: 4vh;
+}
+
+.card-styler {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 17vh;
+  width: 15vw;
+  font-size: 12px;
+}
+
+.artist-name-tag {
+  font-size: large;
+}
+
+.learn-more {
+  width: 8vw;
+  height: 6vh;
+  background: none;
+  border-radius: 20px;
+  border: 1px solid #054a91;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.card-genre,
+.card-rank {
+  font-size: large;
+}
+
+lm-button {
+  height: auto;
+}
 }

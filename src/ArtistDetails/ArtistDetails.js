@@ -4,7 +4,6 @@ import { retrieveSingleArtist } from "../apiCalls";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import ErrorPage from "../ErrorHandling/ErrorPage";
-// import ErrorModal from "../ErrorHandling/ErrorModal";
 
 const ArtistDetails = (props) => {
   const [artist, setArtist] = useState({});
@@ -13,20 +12,21 @@ const ArtistDetails = (props) => {
   const [isFetching, setFetch] = useState(false)
 
   const { artistID, favorites, setFavorites } = props;
-  const getArtist = () => {
+
+  useEffect(() => {
+    
+    const getArtist = () => {
     retrieveSingleArtist(artistID)
       .then((artistData) => {
         setArtist(artistData);
       })
       .catch((error) => setError({ error: error.message }));
   };
-
-  useEffect(() => {
     if(!isFetching){
-      getArtist();
       setFetch(true)
+      getArtist();
     } 
-  }, [getArtist]);
+  }, [isFetching, artistID]);
 
   useEffect(() => {
     for (let el of favorites) {
@@ -57,7 +57,7 @@ const ArtistDetails = (props) => {
     <section className="artist-details">
       <section className="artist-container">
         <div className="to-faves">
-          <NavLink exact to="/favorites" className="favorites-button">
+          <NavLink exact to="/favorites" >
             <button className="favorites-button">To Favorites</button>
           </NavLink>
           <h1 className="artist-name">{name}</h1>

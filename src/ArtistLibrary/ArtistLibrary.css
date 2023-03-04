@@ -1,3 +1,10 @@
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
 .no-artist {
   height: 70vh;
   width: 100vw;
@@ -8,10 +15,6 @@
   margin-top: 5vh;
 }
 
-/* .artista{
-  display: flex;
-  
-} */
 
 .artists-container {
   height: 97%;
@@ -53,8 +56,6 @@
 
 @media screen and (min-width: 501px) and (max-width: 743px) {
   .artists-container {
-    height: 97%;
-    width: 97%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 27px;
@@ -71,8 +72,7 @@
 
 @media screen and (min-width: 743px) and (max-width: 1023px) {
   .artists-container {
-    height: 97%;
-    width: 97%;
+  
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 27px;
