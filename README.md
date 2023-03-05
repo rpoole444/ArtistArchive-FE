@@ -65,11 +65,8 @@ Scroll through the main page to view all artists in the database. Each books's c
 Click on the 'Learn More' button next to a book cover that interests you to view a book's details. On this page a description of the book's plot is presented. The user is also given the ability to add to or remove a book from their favorites as well as the option to buy the book on Amazon. They can view all of their favorited books by clicking the "Your favorites" button at the top right of the page. Click the book club logo at the top left of the page to return to the main page.
 
 
-[Short GIF of Artist Archive](
-
 https://user-images.githubusercontent.com/111818942/222980215-cf84212e-f0c8-407a-845d-b586e2b5633d.mp4
 
-)
 
 ## Code Architecture <a name="codeArchitecture"></a>
 
