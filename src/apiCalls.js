@@ -1,5 +1,5 @@
 const retrieveAllArtists = () => {
-  return fetch(`http://localhost:3001/api/v1/artists`).then((response) => {
+  return fetch(`https://artist-archive-be.herokuapp.com/api/v1/artists`).then((response) => {
     if (response.ok) {
       return response.json();
     } else {
@@ -9,7 +9,7 @@ const retrieveAllArtists = () => {
 };
 
 const retrieveSingleArtist = (artistID) => {
-  return fetch(`http://localhost:3001/api/v1/artists/${artistID}`).then(
+  return fetch(`https://artist-archive-be.herokuapp.com/api/v1/artists/${artistID}`).then(
     (response) => {
       if (response.ok) {
         return response.json();
