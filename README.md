@@ -21,7 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Installation Instructions <a name="installationInstructions"></a>
 
-1. Clone down [this repository](https://github.com/rpoole444/shelf-life-FE)
+1. Clone down [this repository](https://github.com/rpoole444/ArtistArchive-FE)
 2. Run `npm install`
 3. Run `npm start` in your terminal
 4. Go to http://localhost:3000/ and you should see the website
