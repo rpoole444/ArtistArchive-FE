@@ -1,26 +1,26 @@
 describe("Should See and empty Favorites page",() => {
   beforeEach(() => {
-    cy.intercept("GET", "http://localhost:3001/api/v1/artists", {
+    cy.intercept("GET", "https://artist-archive-be.herokuapp.com/api/v1/artists", {
       fixture: "main-page.json",
     });
-    cy.visit("http://localhost:3000/favorites");
+    cy.visit("https://artist-archive-fe.herokuapp.com/favorites");
   });
 
   it("Should see the favorites Page with logo click home", () => {
     cy.get(".record-icon").click()
-    cy.url("http://localhost:3000")
+    cy.url("https://artist-archive-fe.herokuapp.com/favorites")
     cy.get(".card-container").should("have.length", 3)
   })
 
   it("Should Click Return home link and also go to homepage", () => {
     cy.get(".landing-page-link").click()
-    cy.url("http://localhost:3000")
+    cy.url("https://artist-archive-fe.herokuapp.com/favorites")
     cy.get(".card-container").should("have.length", 3)
   })
 
   it("Should be able to add and remove from favorites", () => {
     cy.get(".landing-page-link").click()
-    cy.url("http://localhost:3000")
+    cy.url("https://artist-archive-fe.herokuapp.com/favorites")
     cy.get(".card-container").should("have.length", 3)
 
   
