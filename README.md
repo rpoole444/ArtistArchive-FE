@@ -39,7 +39,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - Node.js 
   
 ## Project Spec
-[click here](https://frontend.turing.edu/projects/module-3/showcase.html)
+[Project Spec here](https://frontend.turing.edu/projects/module-3/showcase.html)
 
 ## Abstract 
 
@@ -63,6 +63,8 @@ Scroll through the main page to view all artists in the database. Each books's c
 Click on the 'Learn More' button next to a book cover that interests you to view a book's details. On this page a description of the book's plot is presented. The user is also given the ability to add to or remove a book from their favorites as well as the option to buy the book on Amazon. They can view all of their favorited books by clicking the "Your favorites" button at the top right of the page. Click the book club logo at the top left of the page to return to the main page.
 
 [gif here!](https://www.veed.io/view/cd7389d4-2879-475d-aa6b-827cbfe0fa38?panel=share)
+https://www.veed.io/view/cd7389d4-2879-475d-aa6b-827cbfe0fa38?panel=share
+(https://www.veed.io/view/cd7389d4-2879-475d-aa6b-827cbfe0fa38?panel=share)
 
 ## Code Architecture <a name="codeArchitecture"></a>
 
