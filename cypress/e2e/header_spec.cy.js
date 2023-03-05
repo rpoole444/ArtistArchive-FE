@@ -3,7 +3,7 @@ describe("Artist Archive Main Page, should see all artist and details", () => {
     cy.intercept("GET", "http://localhost:3001/api/v1/artists", {
       fixture: "main-page.json",
     });
-  cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000");
   });
 
   it("Should have A logo", () => {
