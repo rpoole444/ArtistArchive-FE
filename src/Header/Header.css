@@ -18,20 +18,24 @@
   border-radius: 12px;
   width:25vw;
   height: 10vh;
+  margin-left: 2.5vw;
 }
 
 .nav-link-container{
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: #054b91ed;
   border-radius: 12px;
   width:15vw;
   height: 8vh;
+  margin-right: 2vh;
 }
+
 .record-icon {
   height: 15vh;
   width: 15vh;
+  margin: 2vh 1vw 1vh 3vw;
 }
 
 .landing-page-link,
@@ -39,61 +43,39 @@
   font-family: "Yeseva One";
   text-decoration: none;
   color: snow;
-  font-size: medium;
+  font-size: .55em;
 }
 
-@media screen and (max-width: 500px) {
+
+@media screen and (min-width: 500px) {
+  .title-container,
+  .nav-link-container {
+    width: 40vw;
+  }
+
   .app-title {
-    font-size: 2em;
-  }
-
-  .record-icon {
-    height: 15vh;
-    width: 15vh;
-  }
-
-  .landing-page-link,
-  .favorites-link {
-    font-family: "Yeseva One";
-    text-decoration: none;
-    color: snow;
-    font-size: medium;
+    font-size: 1.5em;
   }
 }
 
-@media screen and (min-width: 501px) and (max-width: 743px) {
+@media screen and (min-width: 743px) {
+  .title-container,
+  .nav-link-container {
+    width: 40vw;
+  }
+
   .app-title {
-    font-size: 5vh;
-  }
-
-  .record-icon {
-    height: 15vh;
-    width: 15vh;
-  }
-
-  .landing-page-link,
-  .favorites-link {
-    font-family: "Yeseva One";
-    text-decoration: none;
-    color: snow;
-    font-size: medium;
+    font-size: 2.5em;
   }
 }
-@media screen and (min-width: 743px) and (max-width: 1023px) {
+
+@media screen and (min-width: 1024px) {
+  .title-container,
+  .nav-link-container {
+    width: 25vw;
+  }
+
   .app-title {
-    font-size: 2em;
-  }
-
-  .record-icon {
-    height: 15vh;
-    width: 15vh;
-  }
-
-  .landing-page-link,
-  .favorites-link {
-    font-family: "Yeseva One";
-    text-decoration: none;
-    color: snow;
-    font-size: medium;
+    font-size: 3em;
   }
 }
