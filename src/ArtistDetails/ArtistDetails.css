@@ -3,6 +3,14 @@ body {
   margin: 0;
   height: 100%;
 }
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-right: 2vh;
+}
+
 .artist-details {
   display: flex;
   flex-direction: column;
@@ -122,5 +130,135 @@ article::-webkit-scrollbar {
   height: 30vh;
 }
 
-@media (min-width: 768px) {
+/* For medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .artist-container {
+    width: 95%;
+  }
+
+  iframe {
+    height: 30vh;
+    width: 80vh;
+  }
+
+  .artist-video {
+    width: 100%;
+  }
+
+  .artist-name {
+    font-size: 4vh;
+  }
+
+  .details-container {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 2vh;
+  }
+
+  .favorites-button,
+  .home-button,
+  .unfavorite-button {
+    width: 40vw;
+    height: 6vh;
+    font-size: 12px;
+  }
+
+  .buttons-container {
+    width: 95vw;
+  }
+
+  .bio {
+    height: 20vh;
+  }
 }
+
+/* For small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .artist-container {
+    width: 98%;
+  }
+
+  iframe {
+    height: 20vh;
+    width: 60vh;
+  }
+
+  .artist-video {
+    width: 98%;
+  }
+
+  .artist-name {
+    font-size: 3vh;
+  }
+
+  .details-container {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 1.5vh;
+  }
+
+  .favorites-button,
+  .home-button,
+  .unfavorite-button {
+    width: 50vw;
+    height: 5vh;
+    font-size: 10px;
+  }
+
+  .buttons-container {
+    width: 98vw;
+  }
+
+  .bio {
+    height: 15vh;
+  }
+}
+
+/* For extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .artist-container {
+    width: 100%;
+  }
+
+  iframe {
+    height: 20vh;
+    width: 60vh;
+  }
+
+  .artist-video {
+    width: 100%;
+  }
+
+  .artist-name {
+    font-size: 2vh;
+  }
+
+  .details-container {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 1vh;
+  }
+
+  .favorites-button,
+  .home-button,
+  .unfavorite-button {
+    width: 30vw;
+    height: 5vh;
+    font-size: 8px;
+  }
+
+  .buttons-container {
+    width: 100vw;
+  }
+
+  .bio {
+    height: 15vh;
+  }
+}
+

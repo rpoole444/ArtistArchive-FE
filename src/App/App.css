@@ -4,19 +4,19 @@
   align-items: center;
   justify-items: center;
   font-family: "Open Dyslexic 3 Bold";
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background-image: url(../assets/1_VRx0mrR9Wp2KZhgOsscZ2g.jpeg);
 }
 .main-page {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .single-artist {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }

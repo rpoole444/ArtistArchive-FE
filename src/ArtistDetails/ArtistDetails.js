@@ -60,7 +60,9 @@ const ArtistDetails = (props) => {
           <NavLink exact to="/favorites" >
             <button className="favorites-button">To Favorites</button>
           </NavLink>
-          <h1 className="artist-name">{name}</h1>
+          <div className="title-container">
+            <h1 className="artist-name">{name}</h1>
+          </div>
         </div>
         <section className="artist-video">
           {video ? (
