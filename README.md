@@ -1,6 +1,8 @@
 # Artist Archive
 
-Do you ever find yourself in a musical slump? Maybe you haven't found music that you love or maybe you are tired of hearing your usual playlists? Well look no further as Artist Archive aims to inspire the uninspired ear!  This website contains a special collection of Incredible musical artist from many differing genres.  Look through the Archive and find new and exciting musical artists!  Each artist click takes you to a description and an inspiring musical video of the Artist.  But wait, if a user find artists that resonate with them, you can collect your favorites into a private favorites collections!  Don't waste another momoetn and find the deployed site below
+Do you ever find yourself in a musical slump? Maybe you haven't found music that you love or maybe you are tired of hearing your usual playlists?
+
+Well look no further as Artist Archive aims to inspire the uninspired ear!  This website contains a special collection of Incredible musical artist from many differing genres.  Look through the Archive and find new and exciting musical artists!  Each artist click takes you to a description and an inspiring musical video of the Artist.  But wait, if a user finds an artists that resonate with them, you can collect your favorites into a private favorites collections!  Don't waste another moment and find the deployed site below!!
 
 Deployed FrontEnd Application here: [Artist Archive FE](https://artist-archive-fe.herokuapp.com/)
 Deployed BackEnd Express App here: [Artist Archive BE](https://artist-archive-be.herokuapp.com/api/v1/artists)
@@ -19,7 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Installation Instructions <a name="installationInstructions"></a>
 
-1. Clone down [this repository](https://github.com/rpoole444/shelf-life-FE)
+1. Clone down [this repository](https://github.com/rpoole444/ArtistArchive-FE)
 2. Run `npm install`
 3. Run `npm start` in your terminal
 4. Go to http://localhost:3000/ and you should see the website
@@ -63,11 +65,8 @@ Scroll through the main page to view all artists in the database. Each books's c
 Click on the 'Learn More' button next to a book cover that interests you to view a book's details. On this page a description of the book's plot is presented. The user is also given the ability to add to or remove a book from their favorites as well as the option to buy the book on Amazon. They can view all of their favorited books by clicking the "Your favorites" button at the top right of the page. Click the book club logo at the top left of the page to return to the main page.
 
 
-[Short GIF of Artist Archive](
-
 https://user-images.githubusercontent.com/111818942/222980215-cf84212e-f0c8-407a-845d-b586e2b5633d.mp4
 
-)
 
 ## Code Architecture <a name="codeArchitecture"></a>
 
