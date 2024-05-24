@@ -1,5 +1,5 @@
 # Artist Archive
-![Deployed Public Link](https://artist-archive-fe.herokuapp.com/)
+[Deployed Public Link](https://artist-archive-fe.herokuapp.com/)
 Do you ever find yourself in a musical slump? Maybe you haven't found music that you love or maybe you are tired of hearing your usual playlists?
 
 Well look no further as Artist Archive aims to inspire the uninspired ear!  This website contains a special collection of Incredible musical artist from many differing genres.  Look through the Archive and find new and exciting musical artists!  Each artist click takes you to a description and an inspiring musical video of the Artist.  But wait, if a user finds an artists that resonate with them, you can collect your favorites into a private favorites collections!  Don't waste another moment and find the deployed site below!!
